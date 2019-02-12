@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.14.5
-Release  : 8
-URL      : https://download.kde.org/stable/plasma/5.14.5/user-manager-5.14.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.14.5/user-manager-5.14.5.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.14.5/user-manager-5.14.5.tar.xz.sig
+Version  : 5.15.0
+Release  : 9
+URL      : https://download.kde.org/stable/plasma/5.15.0/user-manager-5.15.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.15.0/user-manager-5.15.0.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.15.0/user-manager-5.15.0.tar.xz.sig
 Summary  : A simple system settings module to manage the users of your system
 Group    : Development/Tools
 License  : GPL-2.0
@@ -61,14 +61,14 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.14.5
+%setup -q -n user-manager-5.15.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546971208
+export SOURCE_DATE_EPOCH=1549995865
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -76,7 +76,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1546971208
+export SOURCE_DATE_EPOCH=1549995865
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
 cp COPYING %{buildroot}/usr/share/package-licenses/user-manager/COPYING
@@ -117,6 +117,7 @@ popd
 /usr/share/user-manager/avatars/konqui/Logger.png
 /usr/share/user-manager/avatars/konqui/Parley.png
 /usr/share/user-manager/avatars/konqui/Rekonqui.png
+/usr/share/xdg/user-manager.categories
 
 %files lib
 %defattr(-,root,root,-)
