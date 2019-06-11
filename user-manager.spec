@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.15.5
-Release  : 16
-URL      : https://download.kde.org/stable/plasma/5.15.5/user-manager-5.15.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.15.5/user-manager-5.15.5.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.15.5/user-manager-5.15.5.tar.xz.sig
+Version  : 5.16.0
+Release  : 17
+URL      : https://download.kde.org/stable/plasma/5.16.0/user-manager-5.16.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.16.0/user-manager-5.16.0.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.16.0/user-manager-5.16.0.tar.xz.sig
 Summary  : A simple system settings module to manage the users of your system
 Group    : Development/Tools
 License  : GPL-2.0
@@ -61,14 +61,14 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.15.5
+%setup -q -n user-manager-5.16.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557250584
+export SOURCE_DATE_EPOCH=1560266907
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -83,7 +83,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557250584
+export SOURCE_DATE_EPOCH=1560266907
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
 cp COPYING %{buildroot}/usr/share/package-licenses/user-manager/COPYING
@@ -103,8 +103,8 @@ popd
 "/usr/share/user-manager/avatars/bluesstyle/Grace Hopper.png"
 "/usr/share/user-manager/avatars/bluesstyle/Leonardo da Vinci.png"
 "/usr/share/user-manager/avatars/bluesstyle/Mahatma Gandhi.png"
+/usr/share/user-manager/avatars/bluesstyle/Man.png
 "/usr/share/user-manager/avatars/bluesstyle/Mowgli jungle book.png"
-/usr/share/user-manager/avatars/bluesstyle/User.png
 /usr/share/user-manager/avatars/circles/Cat.png
 /usr/share/user-manager/avatars/circles/Female.png
 /usr/share/user-manager/avatars/circles/Konqui.png
