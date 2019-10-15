@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.16.5
-Release  : 22
-URL      : https://download.kde.org/stable/plasma/5.16.5/user-manager-5.16.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.5/user-manager-5.16.5.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.16.5/user-manager-5.16.5.tar.xz.sig
+Version  : 5.17.0
+Release  : 23
+URL      : https://download.kde.org/stable/plasma/5.17.0/user-manager-5.17.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.0/user-manager-5.17.0.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.0/user-manager-5.17.0.tar.xz.sig
 Summary  : A simple system settings module to manage the users of your system
 Group    : Development/Tools
 License  : GPL-2.0
@@ -61,14 +61,14 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.16.5
+%setup -q -n user-manager-5.17.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567653131
+export SOURCE_DATE_EPOCH=1571169940
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -81,14 +81,14 @@ export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1567653131
+export SOURCE_DATE_EPOCH=1571169940
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
-cp COPYING %{buildroot}/usr/share/package-licenses/user-manager/COPYING
+cp %{_builddir}/user-manager-5.17.0/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
 pushd clr-build
 %make_install
 popd
@@ -100,33 +100,30 @@ popd
 %files data
 %defattr(-,root,root,-)
 /usr/share/kservices5/user_manager.desktop
-"/usr/share/user-manager/avatars/bluesstyle/Ada Lovelace.png"
-"/usr/share/user-manager/avatars/bluesstyle/Alice in Wonderland.png"
-"/usr/share/user-manager/avatars/bluesstyle/Grace Hopper.png"
-"/usr/share/user-manager/avatars/bluesstyle/Leonardo da Vinci.png"
-"/usr/share/user-manager/avatars/bluesstyle/Mahatma Gandhi.png"
-/usr/share/user-manager/avatars/bluesstyle/Man.png
-"/usr/share/user-manager/avatars/bluesstyle/Mowgli jungle book.png"
+/usr/share/qlogging-categories5/user-manager.categories
 /usr/share/user-manager/avatars/circles/Cat.png
 /usr/share/user-manager/avatars/circles/Female.png
-/usr/share/user-manager/avatars/circles/Konqui.png
+/usr/share/user-manager/avatars/circles/Konqi.png
 /usr/share/user-manager/avatars/circles/Male.png
 /usr/share/user-manager/avatars/circles/Penguin.png
 /usr/share/user-manager/avatars/circles/Zebra.png
-/usr/share/user-manager/avatars/classic/Blackbox.png
-/usr/share/user-manager/avatars/classic/Bomb.png
-/usr/share/user-manager/avatars/classic/Dragon.png
-/usr/share/user-manager/avatars/classic/Green.png
-/usr/share/user-manager/avatars/classic/Happy.png
-/usr/share/user-manager/avatars/classic/Listening.png
-/usr/share/user-manager/avatars/classic/Notme.png
-/usr/share/user-manager/avatars/classic/TV.png
-/usr/share/user-manager/avatars/konqui/Kati.png
-/usr/share/user-manager/avatars/konqui/Konqui.png
-/usr/share/user-manager/avatars/konqui/Logger.png
-/usr/share/user-manager/avatars/konqui/Parley.png
-/usr/share/user-manager/avatars/konqui/Rekonqui.png
-/usr/share/xdg/user-manager.categories
+"/usr/share/user-manager/avatars/konqui/Artist Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Bookworm Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Boss Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Bug Catcher Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Card Shark Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Hacker Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Journalist Konqi.png"
+/usr/share/user-manager/avatars/konqui/Katie.png
+/usr/share/user-manager/avatars/konqui/Konqi.png
+"/usr/share/user-manager/avatars/konqui/Mechanic Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Messenger Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Musician Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Office Worker Konqi.png"
+"/usr/share/user-manager/avatars/konqui/PC Builder Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Scientist Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Teacher Konqi.png"
+"/usr/share/user-manager/avatars/konqui/Virtual Reality Konqi.png"
 
 %files lib
 %defattr(-,root,root,-)
@@ -134,7 +131,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/user-manager/COPYING
+/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
 
 %files locales -f user_manager.lang
 %defattr(-,root,root,-)
