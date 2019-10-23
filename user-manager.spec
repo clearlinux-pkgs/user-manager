@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.17.0
-Release  : 23
-URL      : https://download.kde.org/stable/plasma/5.17.0/user-manager-5.17.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.17.0/user-manager-5.17.0.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.17.0/user-manager-5.17.0.tar.xz.sig
+Version  : 5.17.1
+Release  : 24
+URL      : https://download.kde.org/stable/plasma/5.17.1/user-manager-5.17.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.1/user-manager-5.17.1.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.1/user-manager-5.17.1.tar.xz.sig
 Summary  : A simple system settings module to manage the users of your system
 Group    : Development/Tools
 License  : GPL-2.0
@@ -22,6 +22,7 @@ BuildRequires : buildreq-kde
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(pwquality)
 BuildRequires : qtbase-dev mesa-dev
+BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -61,14 +62,14 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.17.0
+%setup -q -n user-manager-5.17.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571169940
+export SOURCE_DATE_EPOCH=1571846241
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -85,10 +86,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1571169940
+export SOURCE_DATE_EPOCH=1571846241
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
-cp %{_builddir}/user-manager-5.17.0/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/user-manager-5.17.1/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
 pushd clr-build
 %make_install
 popd
