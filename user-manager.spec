@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.17.1
-Release  : 24
-URL      : https://download.kde.org/stable/plasma/5.17.1/user-manager-5.17.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.17.1/user-manager-5.17.1.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.17.1/user-manager-5.17.1.tar.xz.sig
+Version  : 5.17.2
+Release  : 25
+URL      : https://download.kde.org/stable/plasma/5.17.2/user-manager-5.17.2.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.2/user-manager-5.17.2.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.2/user-manager-5.17.2.tar.xz.sig
 Summary  : A simple system settings module to manage the users of your system
 Group    : Development/Tools
 License  : GPL-2.0
@@ -62,14 +62,14 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.17.1
+%setup -q -n user-manager-5.17.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571846241
+export SOURCE_DATE_EPOCH=1572394463
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -86,10 +86,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1571846241
+export SOURCE_DATE_EPOCH=1572394463
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
-cp %{_builddir}/user-manager-5.17.1/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/user-manager-5.17.2/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
 pushd clr-build
 %make_install
 popd
