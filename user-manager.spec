@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.18.5
-Release  : 34
-URL      : https://download.kde.org/stable/plasma/5.18.5/user-manager-5.18.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.5/user-manager-5.18.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.5/user-manager-5.18.5.tar.xz.sig
+Version  : 5.19.0
+Release  : 35
+URL      : https://download.kde.org/stable/plasma/5.19.0/user-manager-5.19.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.0/user-manager-5.19.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.0/user-manager-5.19.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -63,15 +63,15 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.18.5
-cd %{_builddir}/user-manager-5.18.5
+%setup -q -n user-manager-5.19.0
+cd %{_builddir}/user-manager-5.19.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588707927
+export SOURCE_DATE_EPOCH=1591729802
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,10 +87,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1588707927
+export SOURCE_DATE_EPOCH=1591729802
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
-cp %{_builddir}/user-manager-5.18.5/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/user-manager-5.19.0/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
 pushd clr-build
 %make_install
 popd
@@ -104,9 +104,7 @@ popd
 /usr/share/kservices5/user_manager.desktop
 /usr/share/qlogging-categories5/user-manager.categories
 /usr/share/user-manager/avatars/circles/Cat.png
-/usr/share/user-manager/avatars/circles/Female.png
 /usr/share/user-manager/avatars/circles/Konqi.png
-/usr/share/user-manager/avatars/circles/Male.png
 /usr/share/user-manager/avatars/circles/Penguin.png
 /usr/share/user-manager/avatars/circles/Zebra.png
 "/usr/share/user-manager/avatars/konqui/Artist Konqi.png"
@@ -126,6 +124,26 @@ popd
 "/usr/share/user-manager/avatars/konqui/Scientist Konqi.png"
 "/usr/share/user-manager/avatars/konqui/Teacher Konqi.png"
 "/usr/share/user-manager/avatars/konqui/Virtual Reality Konqi.png"
+"/usr/share/user-manager/avatars/photos/Air Balloon.png"
+/usr/share/user-manager/avatars/photos/Astronaut.png
+/usr/share/user-manager/avatars/photos/Books.png
+/usr/share/user-manager/avatars/photos/Brushes.png
+/usr/share/user-manager/avatars/photos/Bulb.png
+/usr/share/user-manager/avatars/photos/Car.png
+/usr/share/user-manager/avatars/photos/Cat.png
+/usr/share/user-manager/avatars/photos/Chameleon.png
+/usr/share/user-manager/avatars/photos/Cocktail.png
+/usr/share/user-manager/avatars/photos/Dog.png
+/usr/share/user-manager/avatars/photos/Fish.png
+/usr/share/user-manager/avatars/photos/Gamepad.png
+/usr/share/user-manager/avatars/photos/Owl.png
+/usr/share/user-manager/avatars/photos/Pancakes.png
+/usr/share/user-manager/avatars/photos/Parrot.png
+/usr/share/user-manager/avatars/photos/Pencils.png
+/usr/share/user-manager/avatars/photos/Shuttle.png
+/usr/share/user-manager/avatars/photos/Soccer.png
+/usr/share/user-manager/avatars/photos/Sunflower.png
+/usr/share/user-manager/avatars/photos/Sushi.png
 
 %files lib
 %defattr(-,root,root,-)
