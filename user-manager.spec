@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : user-manager
-Version  : 5.19.0
-Release  : 35
-URL      : https://download.kde.org/stable/plasma/5.19.0/user-manager-5.19.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.19.0/user-manager-5.19.0.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.19.0/user-manager-5.19.0.tar.xz.sig
+Version  : 5.19.1
+Release  : 36
+URL      : https://download.kde.org/stable/plasma/5.19.1/user-manager-5.19.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.1/user-manager-5.19.1.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.1/user-manager-5.19.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-2.0
+License  : CC0-1.0 GPL-2.0
 Requires: user-manager-data = %{version}-%{release}
 Requires: user-manager-lib = %{version}-%{release}
 Requires: user-manager-license = %{version}-%{release}
@@ -63,15 +63,15 @@ locales components for the user-manager package.
 
 
 %prep
-%setup -q -n user-manager-5.19.0
-cd %{_builddir}/user-manager-5.19.0
+%setup -q -n user-manager-5.19.1
+cd %{_builddir}/user-manager-5.19.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591729802
+export SOURCE_DATE_EPOCH=1592332084
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,10 +87,30 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591729802
+export SOURCE_DATE_EPOCH=1592332084
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/user-manager
-cp %{_builddir}/user-manager-5.19.0/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/'user-manager-5.19.1/src/pics_sources/Air Balloon.png.license' %{buildroot}/usr/share/package-licenses/user-manager/adabd116af64401b76dd0583f403226df139a955
+cp %{_builddir}/user-manager-5.19.1/COPYING %{buildroot}/usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Astronaut.png.license %{buildroot}/usr/share/package-licenses/user-manager/cf03e23da9870281180ea4163b13a7bcf38a7a82
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Books.png.license %{buildroot}/usr/share/package-licenses/user-manager/cfbb9bcb7e1389c251a0ba3df2b0880cb6620ffb
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Brushes.png.license %{buildroot}/usr/share/package-licenses/user-manager/72d8e0f71a54fd570e1e5264d6e5fb7b29406ad4
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Bulb.png.license %{buildroot}/usr/share/package-licenses/user-manager/be0b3c0900b90dd09df479fad56b1229ad516d3a
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Car.png.license %{buildroot}/usr/share/package-licenses/user-manager/0a9b728823a71ad489b7e1f072590fa00f3aa5bc
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Cat.png.license %{buildroot}/usr/share/package-licenses/user-manager/129c1e09a68be9de6cef412b2a6e93559a87ea26
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Chamelon.png.license %{buildroot}/usr/share/package-licenses/user-manager/c1d70c75552ee593940f393a518534e72587338f
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Cocktail.png.license %{buildroot}/usr/share/package-licenses/user-manager/25b13534deaa992a714f25f14efeaa5eae4de592
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Dog.png.license %{buildroot}/usr/share/package-licenses/user-manager/6220b049f6ae68dbc5a495f05afca9adead61ff6
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Fish.png.license %{buildroot}/usr/share/package-licenses/user-manager/53c07475f67932feacd6188d906188a8dbd6991a
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Gamepad.png.license %{buildroot}/usr/share/package-licenses/user-manager/32946f0e0836c590cc36b8b3206eef0349aa13dd
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Owl.png.license %{buildroot}/usr/share/package-licenses/user-manager/f1bbe3025f15ecddbed6d4510fc2a1794ebf6009
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Pancakes.png.license %{buildroot}/usr/share/package-licenses/user-manager/7cd170c61cf35ee527ce0ffa4abf416bf29038a7
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Parrot.png.license %{buildroot}/usr/share/package-licenses/user-manager/a8b6c38c66a63e54df39a7a2394a61c386dcc323
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Pencils.png.license %{buildroot}/usr/share/package-licenses/user-manager/545c254aaacc416b6d7d7881d4ad9fe94c1cbf1e
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Shuttle.png.license %{buildroot}/usr/share/package-licenses/user-manager/3846b0d0a1072ef0698c1383f6aa5fa88e617a0d
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Soccer.png.license %{buildroot}/usr/share/package-licenses/user-manager/2363d6a59f5770f0340ae0e616d48b000ed85041
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Sunflower.png.license %{buildroot}/usr/share/package-licenses/user-manager/a8a48fc3a258971b868e37643efbabf5ca42ae95
+cp %{_builddir}/user-manager-5.19.1/src/pics_sources/Sushi.png.license %{buildroot}/usr/share/package-licenses/user-manager/e6059edbfaf63e2ad3822f2c09b7ee4c9b6f2aad
 pushd clr-build
 %make_install
 popd
@@ -151,7 +171,27 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/user-manager/0a9b728823a71ad489b7e1f072590fa00f3aa5bc
+/usr/share/package-licenses/user-manager/129c1e09a68be9de6cef412b2a6e93559a87ea26
+/usr/share/package-licenses/user-manager/2363d6a59f5770f0340ae0e616d48b000ed85041
+/usr/share/package-licenses/user-manager/25b13534deaa992a714f25f14efeaa5eae4de592
+/usr/share/package-licenses/user-manager/32946f0e0836c590cc36b8b3206eef0349aa13dd
+/usr/share/package-licenses/user-manager/3846b0d0a1072ef0698c1383f6aa5fa88e617a0d
 /usr/share/package-licenses/user-manager/4cc77b90af91e615a64ae04893fdffa7939db84c
+/usr/share/package-licenses/user-manager/53c07475f67932feacd6188d906188a8dbd6991a
+/usr/share/package-licenses/user-manager/545c254aaacc416b6d7d7881d4ad9fe94c1cbf1e
+/usr/share/package-licenses/user-manager/6220b049f6ae68dbc5a495f05afca9adead61ff6
+/usr/share/package-licenses/user-manager/72d8e0f71a54fd570e1e5264d6e5fb7b29406ad4
+/usr/share/package-licenses/user-manager/7cd170c61cf35ee527ce0ffa4abf416bf29038a7
+/usr/share/package-licenses/user-manager/a8a48fc3a258971b868e37643efbabf5ca42ae95
+/usr/share/package-licenses/user-manager/a8b6c38c66a63e54df39a7a2394a61c386dcc323
+/usr/share/package-licenses/user-manager/adabd116af64401b76dd0583f403226df139a955
+/usr/share/package-licenses/user-manager/be0b3c0900b90dd09df479fad56b1229ad516d3a
+/usr/share/package-licenses/user-manager/c1d70c75552ee593940f393a518534e72587338f
+/usr/share/package-licenses/user-manager/cf03e23da9870281180ea4163b13a7bcf38a7a82
+/usr/share/package-licenses/user-manager/cfbb9bcb7e1389c251a0ba3df2b0880cb6620ffb
+/usr/share/package-licenses/user-manager/e6059edbfaf63e2ad3822f2c09b7ee4c9b6f2aad
+/usr/share/package-licenses/user-manager/f1bbe3025f15ecddbed6d4510fc2a1794ebf6009
 
 %files locales -f user_manager.lang
 %defattr(-,root,root,-)
